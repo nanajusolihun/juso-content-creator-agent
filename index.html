@@ -1,91 +1,107 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b0d12">
-<meta name="description" content="Juso Content Creator Agent membantu riset sepak bola, menemukan ide video, dan menyiapkan naskah konten setiap hari.">
-<title>Juso Content Creator Agent | AI Football Studio</title>
+<meta name="description" content="Juso Content Creator Agent membantu membuat konten sepak bola setiap hari.">
+<title>Juso Content Creator Agent | AI Studio</title>
 <style>
-:root{--bg:#0b0d12;--panel:#131720;--line:#272d39;--text:#f4f6fb;--muted:#9ba5b6;--green:#a3f76b;--blue:#8aa8ff;--radius:20px}
+:root{--bg:#0b0d12;--panel:#131720;--line:#272d39;--text:#f4f6fb;--muted:#9ba5b6;--green:#a3f76b;--radius:20px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65}
 a{color:inherit;text-decoration:none}
 button,a{transition:.2s ease}
 button{font:inherit;cursor:pointer}
 .wrap{width:min(1100px,calc(100% - 40px));margin:auto}
 nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.4px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
 .brand-icon{display:grid;place-items:center;width:38px;height:38px;background:var(--green);color:#111;border-radius:12px;font-size:22px}
 .nav-tag{font-size:12px;color:var(--green);border:1px solid #344b31;padding:5px 11px;border-radius:30px}
-.hero{padding:88px 0 76px;display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
-.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:clamp(40px,6vw,68px);line-height:1.08;letter-spacing:-2.8px;margin:18px 0}
+.hero{padding:80px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.eyebrow,.kicker{color:var(--green);font-size:12px;font-weight:800;letter-spacing:2px}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.08;letter-spacing:-2px;margin:18px 0}
 h1 span{color:var(--green)}
-h2{font-size:clamp(26px,4vw,36px);letter-spacing:-1px;line-height:1.2;margin:8px 0 14px}
+h2{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:8px 0 14px}
 h3{font-size:17px;margin:12px 0 6px}
 p{color:var(--muted);margin:0 0 16px}
-.hero-copy{font-size:17px;max-width:580px}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;border-radius:12px;font-weight:750;border:1px solid var(--line)}
+.hero-copy{font-size:17px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:750;border:1px solid var(--line)}
 .btn-primary{background:var(--green);color:#111;border-color:var(--green)}
 .btn-primary:hover{background:#c1ff9b;transform:translateY(-2px)}
 .btn-secondary{background:#171b25}
 .btn-secondary:hover{border-color:var(--green)}
 .status{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#c8f5b3;background:#18251a;border:1px solid #344b31;border-radius:30px;padding:7px 12px}
 .pulse{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green)}
-.hero-art{border:1px solid var(--line);background:radial-gradient(ellipse at 50% 15%,#263d2c 0%,#151923 48%,#10131a 100%);border-radius:28px;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;position:relative;overflow:hidden}
-.orbit{width:175px;height:175px;border:1px solid #52634e;border-radius:50%;display:grid;place-items:center;position:relative}
-.orbit:before,.orbit:after{content:"";position:absolute;inset:17px;border:1px dashed #536b4a;border-radius:50%}
-.orbit:after{inset:-17px;border-color:#303e31}
-.ball{font-size:76px;filter:drop-shadow(0 0 22px #a3f76455)}
-.art-label{font-size:12px;color:var(--green);letter-spacing:2px;margin-top:35px}
-.art-note{position:absolute;top:20px;right:20px;font-size:11px;color:#c2c9d4;background:#202630;padding:6px 10px;border-radius:8px}
-section{padding:65px 0}
-.section-head{max-width:650px;margin-bottom:30px}
-.kicker{color:var(--green);font-size:11px;letter-spacing:2px;font-weight:800}
+.hero-art{border:1px solid var(--line);background:radial-gradient(ellipse at 50% 15%,#263d2c,#151923 65%);border-radius:28px;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px}
+.orbit{width:175px;height:175px;border:1px solid #52634e;border-radius:50%;display:grid;place-items:center}
+.ball{font-size:76px}
+.art-label{font-size:12px;color:var(--green);letter-spacing:2px;margin-top:30px}
+section{padding:60px 0}
+.section-head{max-width:650px;margin-bottom:28px}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.panel{padding:26px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
-.panel h3{margin-top:0}
+.panel,.feature{padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
 .problem{border-top:3px solid #e58b76}
 .solution{border-top:3px solid var(--green)}
-.point{display:flex;gap:11px;align-items:flex-start;margin:17px 0;color:#dce1ea}
-.point b{display:block;font-size:14px}
-.point small{display:block;color:var(--muted);font-size:13px}
-.point-icon{flex-shrink:0;width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:#222936}
+.point{display:flex;gap:11px;margin:17px 0;color:#dce1ea}
+.point b,.point small{display:block}
+.point b{font-size:14px}
+.point small{color:var(--muted);font-size:13px}
+.point-icon{flex-shrink:0;width:30px;height:30px;display:grid;place-items:center;background:#222936;border-radius:9px}
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.feature{padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
-.feature-icon{font-size:25px;width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:#222b23}
-.feature p{font-size:14px;margin:8px 0 0}
+.feature-icon{font-size:25px}
+.feature p{font-size:14px;margin-top:8px}
 .tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 .tag{border:1px solid var(--line);background:#171b24;color:#c4ccda;border-radius:9px;padding:6px 10px;font-size:12px}
 .demo{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}
 .scenarios{display:flex;flex-direction:column;gap:10px}
 .scenario{width:100%;text-align:left;background:var(--panel);color:var(--text);border:1px solid var(--line);padding:15px;border-radius:12px}
 .scenario:hover,.scenario.active{border-color:var(--green);background:#19211b}
-.scenario small{display:block;color:var(--muted);margin-top:3px}
-.chat{background:#10141c;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-height:390px;display:flex;flex-direction:column}
-.chat-head{display:flex;align-items:center;gap:11px;padding:17px;border-bottom:1px solid var(--line)}
-.mini-avatar{width:38px;height:38px;display:grid;place-items:center;background:#263927;border-radius:12px;font-size:20px}
-.chat-head strong{display:block;font-size:14px}
-.chat-head small{color:var(--green);font-size:11px}
+.scenario small{display:block;color:var(--muted)}
+.chat{background:#10141c;border:1px solid var(--line);border-radius:var(--radius);min-height:360px;display:flex;flex-direction:column;overflow:hidden}
+.chat-head{padding:17px;border-bottom:1px solid var(--line)}
+.chat-head small{display:block;color:var(--green)}
 .messages{padding:20px;display:flex;flex-direction:column;gap:14px;flex:1}
-.bubble{padding:12px 14px;border-radius:13px;font-size:13px;max-width:90%;white-space:pre-wrap;overflow-wrap:anywhere}
-.bot{background:#202631;color:#e5eaf3;align-self:flex-start;border-bottom-left-radius:4px}
-.user{background:#294024;color:#e6ffdc;align-self:flex-end;border-bottom-right-radius:4px}
-.typing{color:var(--muted);font-size:12px;padding-left:5px}
+.bubble{padding:12px 14px;border-radius:13px;font-size:13px;max-width:95%;white-space:pre-wrap;overflow-wrap:anywhere}
+.bot{background:#202631;color:#e5eaf3;align-self:flex-start}
+.user{background:#294024;color:#e6ffdc;align-self:flex-end}
+.typing{color:var(--muted);font-size:12px}
 .chat-foot{padding:12px 16px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
-.cta-box{padding:42px 28px;border-radius:25px;border:1px solid #354632;background:radial-gradient(ellipse at 100% 0%,#243824 0%,#151923 60%);text-align:center}
-.cta-box p{max-width:560px;margin:0 auto}
+.cta-box{padding:40px 25px;border-radius:25px;border:1px solid #354632;background:radial-gradient(ellipse at 100% 0%,#243824,#151923 70%);text-align:center}
+.cta-box p{max-width:560px;margin:auto}
 .cta-box .actions{justify-content:center}
+.btn-whatsapp:hover{border-color:#25D366;color:#8ff0a4}
+.btn-instagram:hover{border-color:#d78af5}
 footer{padding:28px 0 35px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:12px}
-footer a{color:var(--text)}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding:58px 0 45px;gap:30px}.hero-art{min-height:285px}.grid-2,.demo{grid-template-columns:1fr}.features{grid-template-columns:1fr}.panel{padding:22px}section{padding:48px 0}h1{letter-spacing:-1.8px}.nav-tag{font-size:10px}.chat{min-height:350px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* SUPABASE PLACES TABLE */
+.table-wrap{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+#places{width:100%;border-collapse:collapse;min-width:760px;font-size:13px}
+#places th,#places td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+#places th{background:#1a202b;color:var(--green);font-weight:700;white-space:nowrap}
+#places td{color:#dce1ea}
+#places tbody tr:hover{background:#1b202a}
+#places tbody tr:last-child td{border-bottom:none}
+#places a{color:var(--green);font-weight:700}
+#places a:hover{text-decoration:underline}
+.table-status{font-size:13px;color:var(--muted);margin-top:12px}
+@media(max-width:760px){
+.hero{grid-template-columns:1fr;padding:55px 0}
+.hero-art{min-height:250px}
+.grid-2,.demo{grid-template-columns:1fr}
+.features{grid-template-columns:1fr}
+section{padding:45px 0}
+h1{letter-spacing:-1px}
+.nav-tag{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+
 <header class="wrap">
 <nav>
   <a class="brand" href="#home"><span class="brand-icon">⚽</span> JUSO <span style="color:var(--muted);font-weight:500">AI Studio</span></a>
@@ -95,10 +111,11 @@ footer a{color:var(--text)}
 
 <main>
 <div class="wrap">
+
 <section class="hero" id="home">
   <div>
     <span class="status"><span class="pulse"></span> Status: Active &amp; Ready 24/7</span>
-    <div class="eyebrow" style="margin-top:24px">Your Digital Content Employee</div>
+    <div class="eyebrow" style="margin-top:24px">YOUR DIGITAL CONTENT EMPLOYEE</div>
     <h1>Sepak Bola Setiap Hari. <span>Ide Tanpa Henti.</span></h1>
     <p class="hero-copy"><strong style="color:var(--text)">Juso Content Creator Agent</strong> adalah asisten AI yang membantu Anda meriset topik sepak bola, menemukan ide video, serta menyusun naskah dan caption yang siap diedit.</p>
     <div class="actions">
@@ -106,8 +123,7 @@ footer a{color:var(--text)}
       <a class="btn btn-secondary" href="#fitur">Jelajahi Fitur</a>
     </div>
   </div>
-  <div class="hero-art" aria-label="Ilustrasi bola sepak untuk Juso AI">
-    <span class="art-note">AI FOOTBALL STUDIO</span>
+  <div class="hero-art">
     <div class="orbit"><span class="ball">⚽</span></div>
     <div class="art-label">RESEARCH · CREATE · PUBLISH</div>
   </div>
@@ -116,21 +132,21 @@ footer a{color:var(--text)}
 <section id="masalah">
   <div class="section-head">
     <div class="kicker">WHY JUSO?</div>
-    <h2>Dari ide yang buntu menjadi konten yang terarah.</h2>
+    <h2>Dari ide yang buntu menjadi konten terarah.</h2>
     <p>Kurangi waktu untuk memulai dan fokuslah membuat konten sepak bola yang menarik.</p>
   </div>
   <div class="grid-2">
     <article class="panel problem">
       <h3>✕ The Chaos — Tantangan Kreator</h3>
-      <div class="point"><span class="point-icon">⏳</span><div><b>Riset memakan waktu</b><small>Mencari topik dan mengumpulkan informasi dari banyak sumber.</small></div></div>
-      <div class="point"><span class="point-icon">💭</span><div><b>Kehabisan ide video</b><small>Sulit menemukan sudut cerita baru untuk konten setiap hari.</small></div></div>
-      <div class="point"><span class="point-icon">📝</span><div><b>Naskah tidak konsisten</b><small>Struktur cerita dan caption berubah-ubah setiap kali dibuat.</small></div></div>
+      <div class="point"><span class="point-icon">⏳</span><div><b>Riset memakan waktu</b><small>Mengumpulkan informasi dari banyak sumber.</small></div></div>
+      <div class="point"><span class="point-icon">💭</span><div><b>Kehabisan ide video</b><small>Sulit menemukan sudut cerita baru setiap hari.</small></div></div>
+      <div class="point"><span class="point-icon">📝</span><div><b>Naskah tidak konsisten</b><small>Struktur cerita dan caption berubah-ubah.</small></div></div>
     </article>
     <article class="panel solution">
       <h3>✓ The Solution — Dengan Juso</h3>
-      <div class="point"><span class="point-icon">🔎</span><div><b>Riset lebih terstruktur</b><small>Susun topik, fakta yang perlu diverifikasi, dan sudut pembahasan.</small></div></div>
-      <div class="point"><span class="point-icon">💡</span><div><b>Ide konten siap dikembangkan</b><small>Buat daftar ide berdasarkan liga, klub, pemain, dan tren.</small></div></div>
-      <div class="point"><span class="point-icon">✍️</span><div><b>Draft siap diedit</b><small>Siapkan hook, naskah video, CTA, dan caption dengan format konsisten.</small></div></div>
+      <div class="point"><span class="point-icon">🔎</span><div><b>Riset lebih terstruktur</b><small>Susun topik dan fakta yang perlu diverifikasi.</small></div></div>
+      <div class="point"><span class="point-icon">💡</span><div><b>Ide konten siap dikembangkan</b><small>Eksplorasi ide berdasarkan liga, klub, dan pemain.</small></div></div>
+      <div class="point"><span class="point-icon">✍️</span><div><b>Draft siap diedit</b><small>Siapkan hook, naskah video, dan caption.</small></div></div>
     </article>
   </div>
 </section>
@@ -139,47 +155,57 @@ footer a{color:var(--text)}
   <div class="section-head">
     <div class="kicker">CORE CAPABILITIES</div>
     <h2>Tiga kemampuan utama Juso.</h2>
-    <p>Alur kerja yang membantu Anda mengubah topik sepak bola menjadi konsep konten.</p>
+    <p>Ubah topik sepak bola menjadi konsep konten.</p>
   </div>
   <div class="features">
-    <article class="feature">
-      <div class="feature-icon">🔍</div>
-      <h3>Football Research</h3>
-      <p>Rancang brief topik, daftar fakta yang perlu diperiksa, serta sudut cerita tentang liga, klub, dan pemain.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-icon">⚡</div>
-      <h3>Daily Idea Generator</h3>
-      <p>Temukan ide untuk YouTube Shorts dan media sosial dengan hook yang menarik perhatian penonton.</p>
-    </article>
-    <article class="feature">
-      <div class="feature-icon">🎬</div>
-      <h3>Script &amp; Caption</h3>
-      <p>Susun draft naskah, alur video, caption, dan ajakan berinteraksi yang bisa disunting sebelum dipublikasikan.</p>
-    </article>
+    <article class="feature"><div class="feature-icon">🔍</div><h3>Football Research</h3><p>Rancang brief topik dan sudut cerita tentang liga, klub, dan pemain.</p></article>
+    <article class="feature"><div class="feature-icon">⚡</div><h3>Daily Idea Generator</h3><p>Temukan ide YouTube Shorts dengan hook yang menarik perhatian.</p></article>
+    <article class="feature"><div class="feature-icon">🎬</div><h3>Script &amp; Caption</h3><p>Susun draft naskah, alur video, caption, dan ajakan berinteraksi.</p></article>
   </div>
-  <div class="tag-list" aria-label="Tools pendukung">
+  <div class="tag-list">
     <span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Gemini</span>
-    <span class="tag">Google Drive</span><span class="tag">Google Calendar</span><span class="tag">YouTube</span>
-    <span class="tag">Human Review</span>
+    <span class="tag">Google Drive</span><span class="tag">Google Calendar</span><span class="tag">YouTube</span><span class="tag">Human Review</span>
   </div>
-  <p style="font-size:12px;margin-top:12px">Tools di atas adalah bagian dari rancangan workflow. Integrasi otomatis memerlukan konfigurasi dan akses masing-masing layanan.</p>
+  <p style="font-size:12px;margin-top:12px">Integrasi otomatis memerlukan konfigurasi dan akses masing-masing layanan.</p>
+</section>
+
+<!-- SUPABASE PLACES SECTION -->
+<section id="database">
+  <div class="section-head">
+    <div class="kicker">SUPABASE DATABASE</div>
+    <h2>Data Places</h2>
+    <p>Data tempat dari tabel Supabase, diurutkan berdasarkan jumlah review terbanyak.</p>
+  </div>
+  <div class="table-wrap">
+    <table id="places">
+      <thead>
+        <tr>
+          <th>Nama</th><th>Kategori</th><th>Rating</th>
+          <th>Review</th><th>Kota</th><th>Telepon</th><th>Maps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="7">Memuat data...</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="table-status" id="places-status" role="status">Menghubungkan ke database...</p>
 </section>
 
 <section id="simulasi">
   <div class="section-head">
     <div class="kicker">INTERACTIVE SIMULATION</div>
     <h2>Lihat Juso bekerja.</h2>
-    <p>Pilih salah satu skenario untuk melihat contoh percakapan dengan asisten AI Anda.</p>
+    <p>Pilih skenario untuk melihat contoh percakapan dengan asisten AI Anda.</p>
   </div>
   <div class="demo">
-    <div class="scenarios" aria-label="Pilih skenario simulasi">
+    <div class="scenarios">
       <button class="scenario active" data-case="ideas">💡 Cari ide konten<small>Ide video sepak bola harian</small></button>
       <button class="scenario" data-case="script">🎬 Buat naskah Shorts<small>Ubah topik menjadi draft video</small></button>
-      <button class="scenario" data-case="research">🔎 Riset pertandingan<small>Rancang brief riset yang terstruktur</small></button>
+      <button class="scenario" data-case="research">🔎 Riset pertandingan<small>Brief riset yang terstruktur</small></button>
     </div>
     <div class="chat" aria-live="polite">
-      <div class="chat-head"><div class="mini-avatar">⚽</div><div><strong>Juso Content Creator Agent</strong><small>● Simulasi AI aktif</small></div></div>
+      <div class="chat-head"><strong>⚽ Juso Content Creator Agent</strong><small>● Simulasi AI aktif</small></div>
       <div class="messages" id="messages">
         <div class="bubble bot">Halo, kreator! 👋 Saya Juso. Mau mulai membuat konten sepak bola apa hari ini?</div>
       </div>
@@ -192,13 +218,15 @@ footer a{color:var(--text)}
   <div class="cta-box">
     <div class="kicker">LET'S CREATE</div>
     <h2>Ubah passion sepak bola menjadi konten.</h2>
-    <p>Mulai susun ide, kembangkan cerita, dan bangun workflow kreator yang lebih konsisten bersama Juso Content Creator Agent.</p>
+    <p>Bangun workflow kreator yang lebih konsisten bersama Juso Content Creator Agent.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:jusocreator@gmail.com?subject=Kolaborasi%20Juso%20Content%20Creator">✉ Hubungi via Email</a>
-      <a class="btn btn-secondary" href="https://www.instagram.com/jusocreatorfootball/" target="_blank" rel="noopener noreferrer">◎ Instagram</a>
+      <a class="btn btn-secondary btn-whatsapp" href="https://wa.me/6281266669999" target="_blank" rel="noopener noreferrer">☎ WhatsApp</a>
+      <a class="btn btn-secondary btn-instagram" href="https://www.instagram.com/jusocreatorfootball/" target="_blank" rel="noopener noreferrer">◎ Instagram</a>
     </div>
   </div>
 </section>
+
 </div>
 </main>
 
@@ -208,23 +236,24 @@ footer a{color:var(--text)}
 </footer>
 
 <script>
+/* INTERACTIVE CHAT SIMULATION */
 const scenarios = {
   ideas: {
     user: "Juso, berikan ide YouTube Shorts sepak bola untuk hari ini.",
-    answer: "Siap! ⚽ Berikut 3 ide untuk dikembangkan:\n\n1. Mengapa rivalitas dua klub ini begitu panas?\n2. Perjalanan pemain muda dari akademi ke tim utama.\n3. Taktik unik yang mengubah jalannya pertandingan.\n\nHook: “Banyak yang tidak menyadari fakta ini!”\n\nLangkah berikutnya: pilih satu ide, lalu verifikasi fakta dan sumber sebelum produksi."
+    answer: "Siap! ⚽ Berikut 3 ide untuk dikembangkan:\n\n1. Mengapa rivalitas dua klub ini begitu panas?\n2. Perjalanan pemain muda dari akademi ke tim utama.\n3. Taktik unik yang mengubah jalannya pertandingan.\n\nHook: “Banyak yang tidak menyadari fakta ini!”\n\nVerifikasi fakta dan sumber sebelum produksi."
   },
   script: {
-    user: "Buatkan draft Shorts 30 detik tentang pentingnya seorang gelandang bertahan.",
-    answer: "🎬 DRAFT SHORTS · 30 DETIK\n\nHOOK (0–3 dtk): “Pemain paling penting belum tentu pencetak gol!”\n\nISI (3–22 dtk): “Gelandang bertahan menjaga keseimbangan tim. Ia memutus serangan lawan, melindungi lini belakang, dan membantu memulai serangan baru.”\n\nPENUTUP (22–30 dtk): “Menurut kamu, siapa gelandang bertahan terbaik? Tulis di komentar!”\n\nCaption: Peran besar di balik layar. ⚽\n\nCatatan: sesuaikan naskah dengan contoh pemain dan fakta yang sudah diverifikasi."
+    user: "Buatkan draft Shorts 30 detik tentang gelandang bertahan.",
+    answer: "🎬 DRAFT SHORTS · 30 DETIK\n\nHOOK: “Pemain paling penting belum tentu pencetak gol!”\n\nISI: “Gelandang bertahan menjaga keseimbangan tim, memutus serangan lawan, melindungi lini belakang, dan membantu memulai serangan.”\n\nPENUTUP: “Siapa gelandang bertahan terbaik menurut kamu?”\n\nCaption: Peran besar di balik layar. ⚽\n\nPeriksa fakta sebelum publikasi."
   },
   research: {
-    user: "Bantu saya menyiapkan riset untuk pertandingan sepak bola besar.",
-    answer: "🔎 TEMPLATE BRIEF RISET\n\n1. Konteks: kompetisi, tanggal, dan tim yang bertanding.\n2. Performa: hasil lima pertandingan terakhir, setelah diverifikasi.\n3. Pemain: kondisi skuad dan pemain kunci dari sumber tepercaya.\n4. Taktik: gaya bermain dan duel yang menarik dibahas.\n5. Sudut konten: fakta menarik, rivalitas, atau analisis taktik.\n\nOutput: ringkasan, 3 hook, dan ide visual.\n\nSebelum publikasi, periksa tanggal, statistik, kutipan, dan sumber resmi. Saya tidak mengambil data pertandingan live dalam simulasi ini."
+    user: "Bantu saya menyiapkan riset pertandingan sepak bola.",
+    answer: "🔎 TEMPLATE BRIEF RISET\n\n1. Kompetisi, tanggal, dan tim.\n2. Performa lima pertandingan terakhir.\n3. Kondisi skuad dan pemain kunci.\n4. Taktik dan duel menarik.\n5. Fakta, rivalitas, dan sudut konten.\n\nOutput: ringkasan, 3 hook, dan ide visual.\n\nVerifikasi statistik melalui sumber resmi. Demo ini tidak mengambil data live."
   }
 };
 
 const messages = document.getElementById("messages");
-const buttons = document.querySelectorAll(".scenario");
+const scenarioButtons = document.querySelectorAll(".scenario");
 let runId = 0;
 
 function addBubble(text, role) {
@@ -232,34 +261,127 @@ function addBubble(text, role) {
   bubble.className = "bubble " + role;
   bubble.textContent = text;
   messages.appendChild(bubble);
-  return bubble;
 }
 
 function runScenario(key) {
   const id = ++runId;
   const item = scenarios[key];
-  buttons.forEach(button => {
+
+  scenarioButtons.forEach(button => {
     button.classList.toggle("active", button.dataset.case === key);
     button.disabled = true;
   });
+
   messages.replaceChildren();
   addBubble(item.user, "user");
+
   const typing = document.createElement("div");
   typing.className = "typing";
-  typing.textContent = "Juso sedang menyiapkan respons";
+  typing.textContent = "Juso sedang menyiapkan respons...";
   messages.appendChild(typing);
 
   window.setTimeout(() => {
     if (id !== runId) return;
     typing.remove();
     addBubble(item.answer, "bot");
-    buttons.forEach(button => button.disabled = false);
+    scenarioButtons.forEach(button => button.disabled = false);
   }, 1000);
 }
 
-buttons.forEach(button => {
+scenarioButtons.forEach(button => {
   button.addEventListener("click", () => runScenario(button.dataset.case));
 });
+
+/* SUPABASE PLACES DATA */
+const SUPABASE_URL = "https://jcqhifbjicohoeehshre.supabase.co";
+const SUPABASE_KEY = "sb_publishable_bUBb8-Ut9xZ7gyQDCZC9aw_JD-rHzPn";
+
+async function loadPlaces() {
+  const tbody = document.querySelector("#places tbody");
+  const status = document.getElementById("places-status");
+
+  try {
+    if (SUPABASE_URL.includes("YOUR_PROJECT_ID") ||
+        SUPABASE_KEY === "YOUR_SUPABASE_PUBLISHABLE_KEY") {
+      throw new Error("Konfigurasi Supabase belum diisi.");
+    }
+
+    const endpoint = SUPABASE_URL.replace(/\/$/, "") +
+      "/rest/v1/places?select=*&order=reviews_count.desc.nullslast&limit=100";
+
+    const res = await fetch(endpoint, {
+      headers: {
+        apikey: SUPABASE_KEY
+      }
+    });
+
+    if (!res.ok) throw new Error("HTTP " + res.status);
+
+    const rows = await res.json();
+    tbody.replaceChildren();
+
+    if (!rows.length) {
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.colSpan = 7;
+      td.textContent = "Belum ada data.";
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+      status.textContent = "Database berhasil diakses, tetapi belum ada data.";
+      return;
+    }
+
+    for (const p of rows) {
+      const tr = document.createElement("tr");
+
+      for (const value of [
+        p.title,
+        p.category_name,
+        p.total_score,
+        p.reviews_count,
+        p.city,
+        p.phone
+      ]) {
+        const td = document.createElement("td");
+        td.textContent = value ?? "-";
+        tr.appendChild(td);
+      }
+
+      const mapsCell = document.createElement("td");
+
+      if (typeof p.url === "string" && p.url.startsWith("https://")) {
+        const link = document.createElement("a");
+        link.href = p.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Buka";
+        mapsCell.appendChild(link);
+      } else {
+        mapsCell.textContent = "-";
+      }
+
+      tr.appendChild(mapsCell);
+      tbody.appendChild(tr);
+    }
+
+    status.textContent = "Berhasil memuat " + rows.length + " data tempat.";
+  } catch (error) {
+    console.error("Gagal memuat places:", error);
+    tbody.replaceChildren();
+
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 7;
+    td.textContent = "Gagal memuat data. Periksa konfigurasi Supabase dan akses tabel.";
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+
+    status.textContent = "Data belum tersedia. Periksa konfigurasi koneksi.";
+  }
+}
+
+loadPlaces();
 </script>
 </body>
 </html>
+```
